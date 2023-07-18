@@ -14,7 +14,7 @@
   }
 
   li {
-    @apply rounded-xl flex justify-between p-3 bg-gray-100 text-base mb-4;
+    @apply rounded-xl flex justify-between items-center py-2 px-4 bg-gray-100 text-base mb-2;
   }
 
   .btn {
@@ -30,6 +30,6 @@
   }
 
   .cross {
-    @apply hover:bg-red-500 h-7 w-7 rounded-full text-center cursor-pointer duration-300	hover:text-white;
+    @apply hover:bg-red-500 h-7 w-7 rounded-full text-center cursor-pointer duration-300	hover:text-white flex items-center justify-center;
   }
 }
