@@ -1,10 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import ListItems from "./ListItems";
 
 const TodoApp = () => {
   const [display, setDisplay] = useState("");
   const [items, setItems] = useState([]);
-
+  
   const showData = (e) => {
     setDisplay(e.target.value);
   };
@@ -35,16 +35,14 @@ const TodoApp = () => {
     });
   };
 
-  // on enter key press
-  const input = useRef(null);
-  input.addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
       setItems((oldItems) => {
         return [...oldItems, { text: display, completed: false }];
       });
       setDisplay("");
     }
-  });
+  }
 
   return (
     <div>
@@ -58,6 +56,7 @@ const TodoApp = () => {
               <input
                 onChange={showData}
                 value={display} 
+                onKeyDown={handleKeyDown}
                 className="flex-1 h-10 p-3 rounded-lg border border-[#61DBFB] focus:outline-none"
                 type="text"
                 placeholder="Input your task..."
