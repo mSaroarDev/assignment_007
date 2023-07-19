@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import ListItems from "./ListItems";
 
 const TodoApp = () => {
@@ -34,6 +34,17 @@ const TodoApp = () => {
       });
     });
   };
+
+  // on enter key press
+  const input = useRef(null);
+  input.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      setItems((oldItems) => {
+        return [...oldItems, { text: display, completed: false }];
+      });
+      setDisplay("");
+    }
+  });
 
   return (
     <div>
