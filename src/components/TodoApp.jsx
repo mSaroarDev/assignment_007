@@ -48,7 +48,7 @@ const TodoApp = () => {
     <div>
       <div className="container">
         <div className="flex h-screen w-full justify-center p-6">
-          <div className="box max-w-sm w-full h-fit bg-white rounded-md p-4">
+          <div className="box max-w-sm w-full h-fit bg-white rounded-md p-4 mb-5">
             <h1 className="font-bold text-center text-2xl font-poppins">
               To Do Application <br /> by <span className="text-[#61DBFB]">React</span>
             </h1>
